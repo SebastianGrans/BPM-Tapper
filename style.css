@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(131,58,180);
+    background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    color: white;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+#settings {
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: solid black 1px; */
+}
+#settings > * {
+    margin: auto 1em;
+}
+
+
+#rolling-average-selector {
+    width: 3em;
+    text-align: center;
+}
+
+
+#auto-reset-time-selector {
+    width: 3em;
+    text-align: center;
+}
+
+
+#settings > button, input {
+    font-size: 1em;
+    background-color: transparent;
+    border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.747);
+    color: white;
+}
+
+#settings > button:hover {
+    background: #0000001c;
+    background: #ffffffa6;
+}
+
+
+#container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#counter {
+    visibility: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10em;
+}
+
+.counter-color {
+    color: white;
+}
+
+.counter-animated-taps {
+    animation: blink 0.1s linear;
+}
+
+@keyframes blink {
+    0% {scale: 1;}
+    50% {scale: 1.05;}
+    100% {scale: 1;}
+}
+
+.counter-timeout-fadeout {
+    animation: fade 1s linear;
+    color: rgba(255, 255, 255, 0.521);
+}
+
+@keyframes fade {
+    from {color: white;}
+}
+
+#counter-message {
+    visibility: visible;
+    position: absolute;
+    text-align: center;
+    font-size: 3em;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 15em;
+    background-color:  #0000001c;
+    background-color: #ffffff46;
+    color: #fff;
+    text-align: left;
+    padding: 0.5em 0.5em;
+    border-radius: 0.3em;
+    border-color: rgb(224, 224, 224);
+    border-width: 1px;
+    border-style: solid;
+    backdrop-filter: blur(6px); 
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    z-index: 1;
+}
+  
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    backdrop-filter: blur(6px); 
+    -webkit-backdrop-filter: blur(6px); 
+}
+
