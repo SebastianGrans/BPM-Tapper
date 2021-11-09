@@ -7,3 +7,9 @@ Check it out [here](https://sebastiangrans.github.io/BPM-Tapper/)!
 
 # Screen capture 
 ![](imgs/output.gif)
+
+# Ideas 
+## Animated charts 
+One could add a dynamic line chart at the bottom displaying BPM vs time. 
+
+Similar to [this](https://www.grapecity.com/wijmo/demos/Chart/LineArea/DynamicLineChart/vue) example! Although, I'd prefer a continously growing x-axis to make it appear smoother. 

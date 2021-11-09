@@ -5,6 +5,21 @@ var rolling_average = document.getElementById("rolling-average-selector").value;
 var reset_time = document.getElementById("auto-reset-time-selector").value * 1000; // Milliseconds
 var timeout_id = null;
 
+
+function toggle_menu() {
+    console.log("Toggling menu.");
+    let menu_element = document.getElementById('menu');
+    let close_button = document.getElementById('close_button');
+    // Show the menu overlay
+    menu_element.classList.toggle('fade_out');
+    menu_element.classList.toggle('fade_in');
+    
+    // Show the close button
+    close_button.classList.toggle('fade_out');
+    close_button.classList.toggle('fade_in');
+
+}
+
 function avg_diff(list) {
     let diff = list.map((element, index) => list[index+1]-element);
     diff.pop();

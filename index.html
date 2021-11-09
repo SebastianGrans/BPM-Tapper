@@ -1,32 +1,44 @@
 <html>
 <head>
+    <meta charset="utf-8">
     <script src="script.js" defer></script>
+    <link href="reset.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <section> 
-    <div id="settings">
-        <p class="tooltip">
+    <p class="menu_button" onclick="toggle_menu()">
+        <img alt="Settings" src="imgs/burger.png">
+    </p>
+    <p id="close_button" class="close_button" onclick="toggle_menu()">
+        <img alt="Close" src="imgs/close.png">
+    </p>
+    <div id="menu" class="menu fade_out">
+        <p class="tooltip" style="text-align: center;">
             <span class="tooltiptext" style="width: 20em;">
                 The number of most resent samples to use for computing the BPM.<br>
 				Zero implies that all samples are used.
 			</span>
             <label for="rolling-average-selector">Rolling average</label>
+            <br>
             <input id="rolling-average-selector" type="number" name="rolling-average-selector" value="10" step="1" min="0">
         </p>
+        <br>
         <p class="tooltip">
             <span class="tooltiptext" style="width: 20em;">
                 The counter automatically resets if you are idle for more than this many seconds. 
 			</span>
             <label for="auto-reset-time-selector">Auto reset time</label>
+            <br>
             <input id="auto-reset-time-selector" type="number" name="uto-reset-time-selector" value="2.0" step="0.1" min="1">
         </p>
+        <br>
         <button id="reset-button" name="button" class="tooltip">Reset
 			<span class="tooltiptext">
 				Manually reset the counter. <br> Tip: You can reset the counter by pressing 'r'.
 			</span>
         </button>
     </div>
+
     <div id="container">
         <span id="counter" class="counter-color">
             100.0
@@ -35,7 +47,7 @@
             Press space or tap the screen.
         </span>
     </div>
-    <p style="position: fixed; bottom: 0; right: 1em;">
+    <p style="position: fixed; bottom: 1em; right: 1em; z-index: 3;">
         <a href="https://github.com/SebastianGrans/BPM-Tapper">
             <img alt="GitHub" src="imgs/mark.png">
         </a>
