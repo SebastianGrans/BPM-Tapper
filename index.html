@@ -1,16 +1,18 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="script.js" defer></script>
     <link href="reset.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <title>BPM Tapper</title> 
 </head>
 <body>
     <p class="menu_button" onclick="toggle_menu()">
-        <img alt="Settings" src="imgs/burger.png">
+        <img alt="Settings" src="imgs/burger.svg">
     </p>
     <p id="close_button" class="close_button" onclick="toggle_menu()">
-        <img alt="Close" src="imgs/close.png">
+        <img alt="Close" src="imgs/close.svg">
     </p>
     <div id="menu" class="menu fade_out">
         <p class="tooltip" style="text-align: center;">
@@ -44,12 +46,17 @@
             100.0
         </span>
         <span id="counter-message">
-            Press space or tap the screen.
+            <!-- Press space or tap the screen. -->
+            <p style="border: solid 0.09em white; border-radius: 0.2em; padding: 0.05em 0.1em;">
+                SPACE  
+            </p>
+            or
+            <img alt="tap" src="imgs/click.svg" style="width: 1.7em;">
         </span>
     </div>
     <p style="position: fixed; bottom: 1em; right: 1em; z-index: 3;">
-        <a href="https://github.com/SebastianGrans/BPM-Tapper">
-            <img alt="GitHub" src="imgs/mark.png">
+        <a href="https://github.com/SebastianGrans/BPM-Tapper" target="_blank">
+            <img alt="GitHub" src="imgs/mark.svg" style="width: calc(3em + 1vw);">
         </a>
     </p>
     </section>

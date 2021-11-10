@@ -1,3 +1,9 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    /* TODO: tooltip overflows the screen. 
+    This prevents overflow to produce scrollbars. */ 
+    overflow: hidden;
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +21,10 @@ body {
     z-index: 3;
     width: 5vw; /* Let's make it easier to click */ 
     height: 5vw;
+}
+
+.menu_button > img, .close_button > img {
+    width: calc(2em + 1vw);
 }
 
 .close_button > img {
@@ -60,7 +70,13 @@ body {
     justify-content: center;
     z-index: 2;
 
-    font-size: 1.5em;
+    font-size: calc(1.8em + 1vw);
+    /* font-size: 1.5em; */
+}
+ 
+.menu label {
+    display:inline-block;
+    margin-bottom: 0.2em;
 }
 
 .fade_out {
@@ -90,9 +106,9 @@ body {
     font-size: 1em;
     background-color: transparent;
     border-radius: 0.3em;
-    border-width: 1px;
+    border-width: 0.05em;
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.747);
+    border-color: white;
     color: white;
 }
 
@@ -113,7 +129,8 @@ body {
 #counter {
     visibility: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10em;
+    /* font-size: 10em; */
+    font-size: calc(6rem + 3vw);
 }
 
 .counter-color {
@@ -140,10 +157,16 @@ body {
 }
 
 #counter-message {
+    display: flex;
+    gap: 0.4em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     visibility: visible;
     position: absolute;
     text-align: center;
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size: calc(2rem + 3vw);
 }
 
 
@@ -183,3 +206,15 @@ body {
     -webkit-backdrop-filter: blur(6px); 
 }
 
+@media (orientation: portrait) {
+    #counter-message {
+        flex-direction: column;
+        gap: 0.4em;
+    }
+}
+
+@media (orientation: landscape) {
+    #counter-message > img {
+        margin-left: -0.3em; /* Kerning... */
+    }
+}
